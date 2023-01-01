@@ -6,10 +6,8 @@ type AuthUser = {
 };
 
 export const User = () => {
-  //   const [user, setUser] = useState(null);
-
-  //informing typescript that user can either be null or AuthUser
-  const [user, setUser] = useState<AuthUser | null>(null);
+  // The empty object is of type AuthUser
+  const [user, setUser] = useState<AuthUser>({} as AuthUser);
 
   const handleLogin = () => {
     setUser({
@@ -17,19 +15,12 @@ export const User = () => {
       email: "vishwas@example.com",
     });
   };
-  const handleLogout = () => {
-    setUser(null);
-  };
 
   return (
     <div>
       <button onClick={handleLogin}>Login</button>
-      <button onClick={handleLogout}>Logout</button>
-      {/* <div>User name is {user.name}</div>
-      <div>User email is {user.email}</div> */}
-
-      <div>User name is {user?.name}</div>
-      <div>User email is {user?.email}</div>
+      <div>User name is {user.name}</div>
+      <div>User email is {user.email}</div>
     </div>
   );
 };
