@@ -5,7 +5,7 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <Private isLoggedIn={true} Component={Profile} />
+      <Private isLoggedIn={true} component={Profile} />
     </div>
   );
 }
