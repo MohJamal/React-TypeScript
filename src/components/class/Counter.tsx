@@ -1,7 +1,19 @@
 import { Component } from "react";
 
+type CounterProps = {
+  message: string;
+};
+type CounterState = {
+  count: number;
+};
+
 /** The count value is 5 */
-export class Counter extends Component {
+// if your component doesn't have props
+// export class Counter extends Component<{}, CounterState> {
+
+// if your component doesn't have state
+// export class Counter extends Component<CounterProps> {
+export class Counter extends Component<CounterProps, CounterState> {
   state = {
     count: 0,
   };
@@ -9,7 +21,6 @@ export class Counter extends Component {
   handleClick = () => {
     this.setState((prevState) => ({ count: prevState.count + 1 }));
   };
-
   render() {
     return (
       <div>
