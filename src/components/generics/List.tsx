@@ -3,9 +3,9 @@ type ListProps<T> = {
   onClick: (value: T) => void;
 };
 
-// <T extends string | number> => add restriction to generic type that props pass only an array of
-// numbers or strings
-export const List = <T extends string | number>({
+// <T extends { id: number }> => add restriction to generic type that props pass only an array of
+//objects & each object must contain an id property
+export const List = <T extends { id: number }>({
   items,
   onClick,
 }: ListProps<T>) => {
@@ -14,7 +14,7 @@ export const List = <T extends string | number>({
       <h2>List of items</h2>
       {items.map((item, index) => {
         return (
-          <div key={index} onClick={() => onClick(item)}>
+          <div key={item.id} onClick={() => onClick(item)}>
             {item}
           </div>
         );
