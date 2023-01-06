@@ -4,7 +4,9 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <RandomNumber value={10} isPositive isNegative isZero />
+      {/* isPositive equals isPositive = {true} */}
+      {/* <RandomNumber value={10} isPositive isNegative isZero /> */}
+      <RandomNumber value={10} isPositive />
     </div>
   );
 }
