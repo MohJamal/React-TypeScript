@@ -3,8 +3,12 @@ type ListProps<T> = {
   onClick: (value: T) => void;
 };
 
-//<T extends {}> => the least restriction when passing in props
-export const List = <T extends {}>({ items, onClick }: ListProps<T>) => {
+// <T extends string | number> => add restriction to generic type that props pass only an array of
+// numbers or strings
+export const List = <T extends string | number>({
+  items,
+  onClick,
+}: ListProps<T>) => {
   return (
     <div>
       <h2>List of items</h2>
