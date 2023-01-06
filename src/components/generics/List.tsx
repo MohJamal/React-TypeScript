@@ -1,9 +1,10 @@
-type ListProps = {
-  items: string[];
-  onClick: (value: string) => void;
+type ListProps<T> = {
+  items: T[];
+  onClick: (value: T) => void;
 };
 
-export const List = ({ items, onClick }: ListProps) => {
+//<T extends {}> => the least restriction when passing in props
+export const List = <T extends {}>({ items, onClick }: ListProps<T>) => {
   return (
     <div>
       <h2>List of items</h2>
