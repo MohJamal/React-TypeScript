@@ -4,7 +4,9 @@ import "./App.css";
 function App() {
   return (
     <div className="App">
-      <CustomButton variant="primary" />
+      <CustomButton variant="primary" onClick={() => console.log("Clicked")}>
+        <div>Button Label</div>
+      </CustomButton>
     </div>
   );
 }
