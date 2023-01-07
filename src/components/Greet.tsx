@@ -4,7 +4,7 @@ type GreetProps = {
   isLoggedIn: boolean;
 };
 
-const Greet = (props: GreetProps) => {
+export const Greet = (props: GreetProps) => {
   const { messageCount = 0 } = props;
 
   return (
